@@ -28,6 +28,8 @@ define([
 		textAnim: null, imgAnim: null, scrollAnim: null, descriptionAnim: null, titleAnim: null,
 		
 		scrollTimeOut: null,
+
+        mIndex:0,
 		
 		postCreate: function(){
             function appendImage(parameters) {
@@ -93,6 +95,15 @@ define([
                 slideshow.setTextNodeMargin(0);
             });*/
 
+            on(this.leftNode, "click", function(evt){
+                slideshow.goToPage(slideshow.mIndex >= 0 ? (slideshow.mIndex-1) : slideshow.mIndex + slideshow.imageDataArray.length);
+            })
+
+            on(this.rightNode, "click", function(evt){
+                slideshow.goToPage((slideshow.mIndex+1)%slideshow.imageDataArray.length);
+            })
+
+            this.mIndex = 0;
 			this.scrollTimeOut = setTimeout( function(){ slideshow.goToPage(1)}, slideshow.imageDataArray[0].duration * 1000);
 		},
 		
@@ -113,6 +124,8 @@ define([
 		},
 		
 		goToPage: function(index){
+
+            this.mIndex = index;
 			
 			if(this.scrollTimeOut!=null) clearTimeout(this.scrollTimeOut);
 
