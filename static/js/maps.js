@@ -52,8 +52,8 @@ $(document).ready(function() {
 
     $("#proceed").click(function(){
         // Spin!
-        //while (path === null) {}
-        //$.post('/directionsList');
+        while (path === null) {}
+        $("#items").val(JSON.stringify(path));
         $("#locForm").submit();
     });
 
