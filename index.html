@@ -13,6 +13,7 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
     <style>
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -56,17 +57,26 @@
                     <label for="dir1" style="margin-top: 20px">Location B</label>
                     <input id="dir2" class="dir">
                 </form>
-                <div class="btn-group">
+                <div class="btn-group" data-toggle="buttons-radio" style="margin-bottom: 12px">
+                    <button type="button" class="btn btn-primary optionsBtn">Driving</button>
+                    <button type="button" class="btn btn-primary optionsBtn">Transit</button>
+                    <button type="button" class="btn btn-primary optionsBtn">Bicycling</button>
+                    <button type="button" class="btn btn-primary optionsBtn">Walking</button>
+                </div>
+                <div class="btn-group" style="margin:0">
                     <button class="btn btn-primary" id="gobtn" style="width:213px">Go</button>
                 </div>
             </div>
         </div>
-        <div class="span8">
+        <div class="span8" style="margin-top:20px">
             <div style="width: 500px; height: 300px;">
                 <div id="map-canvas"></div>
             </div>
         </div>
     </div>
+</div>
+<div class="container" id="my-container">
+
 </div>
 
 <div class="fake-container">
