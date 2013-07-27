@@ -20,7 +20,7 @@ $(document).ready(function() {
     $("#gobtn").click(function() {
         var input1 = $("#dir1").val();
         var input2 = $("#dir2").val();
-        $.post("/showDirections", {"start": input1, "end": input2})
+        $("locForm").submit();
     });
 
     $(".optionsBtn").click(function(){
