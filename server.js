@@ -13,5 +13,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/showDirections', function(req, res) {
-
+	var start = req.body.start;
+	var end = req.body.end;
+	
 });

@@ -25,58 +25,26 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#">MapCache</a>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
-
 <div class="container">
-    <div class="row">
-        <div class="span4">
-            <h1>MapCache</h1>
-            <p>No GPS. No Problem</p>
-            <div style="margin-top:30px; margin-bottom: 30px">
-                <form id="locForm" action="/showDirections">
-                    <label for="dir1">Location A</label>
-                    <input id="dir1" name="startLoc" class="dir">
-                    <label for="dir2" style="margin-top: 20px">Location B</label>
-                    <input id="dir2" name="endLoc" class="dir">
-                </form>
-                <div class="btn-group" data-toggle="buttons-radio" style="margin-bottom: 12px">
-                    <button type="button" class="btn btn-primary optionsBtn">Driving</button>
-                    <button type="button" class="btn btn-primary optionsBtn">Transit</button>
-                    <button type="button" class="btn btn-primary optionsBtn">Bicycling</button>
-                    <button type="button" class="btn btn-primary optionsBtn">Walking</button>
-                </div>
-                <div class="btn-group" style="margin:0">
-                    <button class="btn btn-primary" id="gobtn" style="width:213px">Go</button>
-                </div>
-            </div>
+    <h1>MapCache</h1>
+    <p>No GPS. No Problem</p>
+    <div style="margin-top:30px; margin-bottom: 30px">
+        <form id="locForm" action="/showDirections">
+            <label for="dir1">Location A</label>
+            <input id="dir1" name="startLoc" class="dir">
+            <label for="dir2" style="margin-top: 20px">Location B</label>
+            <input id="dir2" name="endLoc" class="dir">
+        </form>
+        <div class="btn-group" data-toggle="buttons-radio" style="margin-bottom: 12px">
+            <button type="button" class="btn btn-primary optionsBtn">Driving</button>
+            <button type="button" class="btn btn-primary optionsBtn">Transit</button>
+            <button type="button" class="btn btn-primary optionsBtn">Bicycling</button>
+            <button type="button" class="btn btn-primary optionsBtn">Walking</button>
         </div>
-        <div class="span8" style="margin-top:20px">
-            <div style="width: 500px; height: 300px;">
-                <div id="map-canvas"></div>
-            </div>
+        <div class="btn-group" style="margin:0">
+            <button class="btn btn-primary" id="gobtn" style="width:213px">Go</button>
         </div>
     </div>
-</div>
-<div class="container" id="my-container">
-
 </div>
 
 </body>
