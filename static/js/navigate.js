@@ -5,6 +5,7 @@ $(document).ready(function() {
     var directionsDisplay;
     var directionsService = new google.maps.DirectionsService();
     var map;
+    var dirType = google.maps.DirectionsTravelMode.DRIVING;
 
     var mapOptions = {
         zoom: 8,
@@ -19,8 +20,13 @@ $(document).ready(function() {
     $("#gobtn").click(function() {
         var input1 = $("#dir1").val();
         var input2 = $("#dir2").val();
-        calcRoute(input1, input2);
+        calcRoute(input1, input2, dirType);
     });
+
+    $(".optionsBtn").click(function(){
+        dirType = google.maps.DirectionsTravelMode[$(this).text().toUpperCase()];
+        console.log(dirType);
+    })
 
     $(".dir").keypress(function(e) {
         if (e.which == 13) {
@@ -41,6 +47,11 @@ $(document).ready(function() {
                 var routes = response.routes;
                 var leg = routes[0].legs;
                 var steps = leg[0].steps;
+                var startLoc = steps[0].start_location;
+                var endLoc = steps[0].end_location;
+                var params = {"sizeX": 200, "sizeY": 200, "x": startLoc.jb, "y": startLoc.kb, "heading": 0}
+                console.log("Appending image");
+                appendImage(params, $("#my-container"));
             }
             else {
                 console.log('Failed to get directions for this route');
@@ -48,9 +59,11 @@ $(document).ready(function() {
         });
     }
 
-    function appendImage(parameters, place){
+    function appendImage(parameters, place) {
         var url = "http://maps.googleapis.com/maps/api/streetview?size=" + parameters.sizeX + "x" + parameters.sizeY +
-            "&location=" + parameters.x + ",%"+parameters.y+"&heading="+parameters.heading+"&sensor=false";
+            "&location=" + parameters.x + ",%20" + parameters.y + ("heading" in parameters ? "&heading=" + parameters.heading : "")
+             + "&sensor=false";
+        console.log(url);
         var img = place.append('<img id="mapImage">');
         $('#mapImage').attr('src', url);
     }
