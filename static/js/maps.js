@@ -9,6 +9,7 @@ $(document).ready(function() {
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
+                console.log(response);
                 var route = response.routes[0];
                 var leg = route.legs[0];
                 path = leg.steps;
@@ -17,15 +18,6 @@ $(document).ready(function() {
                 console.log('Failed to get directions for this route');
             }
         });
-    }
-
-    function appendImage(parameters, place) {
-        var url = "http://maps.googleapis.com/maps/api/streetview?size=" + parameters.sizeX + "x" + parameters.sizeY +
-            "&location=" + parameters.x + ",%20" + parameters.y + ("heading" in parameters ? "&heading=" + parameters.heading : "")
-             + "&sensor=false";
-        console.log(url);
-        var img = place.append('<img id="mapImage">');
-        $('#mapImage').attr('src', url);
     }
 
     google.maps.visualRefresh = true;
@@ -60,8 +52,9 @@ $(document).ready(function() {
 
     $("#proceed").click(function(){
         // Spin!
-        while (path === null) {}
-        $.post('/directionsList', {'steps': path});
+        //while (path === null) {}
+        //$.post('/directionsList');
+        $("#locForm").submit();
     });
 
 });
