@@ -13,7 +13,10 @@ app.get('/', function(req, res) {
 app.post('/showDirections', function(req, res) {
 	var start = req.body.start;
 	var end = req.body.end;
-	res.render('maps.ejs', {"start": start, "end": end});
+	var mode = req.body.mode;
+	var params = {"start": start, "end": end, "mode": mode}
+	console.log(params);
+	res.render('maps.ejs', params);
 });
 
 var port = process.env.PORT || 3000;

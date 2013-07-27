@@ -35,10 +35,9 @@ $(document).ready(function() {
     }
 
     google.maps.visualRefresh = true;
-    var directionsDisplay;
+    var directionsDisplay = new google.maps.DirectionsRenderer();
     var directionsService = new google.maps.DirectionsService();
     var map;
-    var dirType = google.maps.DirectionsTravelMode.DRIVING;
 
     var mapOptions = {
         zoom: 8,

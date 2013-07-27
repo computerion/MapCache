@@ -20,13 +20,18 @@
         }
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <script type="text/javascript" src="js/maps.js"></script>
 </head>
 <body>
 <div class="text-center">
     <div class="container" style="width: 213px; text-align: left">
         <div id="map-canvas"></div>
     </div>
+    <div class="container">
+        <input type="hidden" id="origin" value="<%= start %>">
+        <input type="hidden" id="destination" value="<%= end %>">
+        <input type="hidden" id="mode" value="<%= mode %>">
+    </div> 
 </div>
+<script type="text/javascript" src="js/maps.js"></script>
 </body>
 </html>
