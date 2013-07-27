@@ -26,11 +26,11 @@ $(document).ready(function() {
         }
     });
 
-    function calcRoute(start, end) {
+    function calcRoute(start, end, type) {
         var request = {
             origin:start,
             destination:end,
-            travelMode: google.maps.DirectionsTravelMode.DRIVING
+            travelMode: type
         };
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
@@ -46,4 +46,12 @@ $(document).ready(function() {
             }
         });
     }
+
+    function appendImage(parameters, place){
+        var url = "http://maps.googleapis.com/maps/api/streetview?size=" + parameters.sizeX + "x" + parameters.sizeY +
+            "&location=" + parameters.x + ",%"+parameters.y+"&heading="+parameters.heading+"&sensor=false";
+        var img = place.append('<img id="mapImage">');
+        $('#mapImage').attr('src', url);
+    }
+
 });
