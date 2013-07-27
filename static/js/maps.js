@@ -17,7 +17,7 @@ $(document).ready(function() {
                 var endLoc = steps[0].end_location;
                 var params = {"sizeX": 200, "sizeY": 200, "x": startLoc.jb, "y": startLoc.kb, "heading": 0}
                 console.log("Appending image");
-                //appendImage(params, $("#my-container"));
+                appendImage(params, $("#my-container"));
             }
             else {
                 console.log('Failed to get directions for this route');
