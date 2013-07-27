@@ -4,7 +4,7 @@ require(["dojo/dom", "js/SlideShow"],function(dom, SlideShow) {
     console.log(steps);
     var slideShow = new SlideShow(
         {
-            width: 520, height:320,
+            width: 560, height:320,
             resp: steps
         });
     slideShow.placeAt(dom.byId("container"));
