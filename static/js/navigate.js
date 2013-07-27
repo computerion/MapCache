@@ -7,8 +7,8 @@ $(document).ready(function() {
         $("#locForm").submit();
     });
 
-    $('#dir1').val('Mountain View, CA');
-    $('#dir2').val('Sunnyvale, CA');
+    $('#dir1').val('Fremont, CA');
+    $('#dir2').val('Yahoo, Sunnyvale');
 
     $(".optionsBtn").click(function(){
         $("#mode").val($(this).attr('id').toUpperCase());
