@@ -37,7 +37,36 @@ html, body {
     padding: 4px 9px 4px 9px;
     width: 50px;
     display:inline-block;
+    opacity:0.35;
+    filter:alpha(opacity=35); /* For IE8 and earlier */
 }
 
 #icon-group .optionsBtn {
+}
+
+
+.goBtn {
+    margin-top: 15px;
+    border: 1px solid #e6e7e8;
+    color: #e6e7e8;
+    font-size: 17px;
+    background-color: transparent;
+    padding: 4px 15px 4px 15px;
+
+}
+
+.goBtn:hover {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+
+}
+
+.optionsBtn:hover {
+    opacity:0.6;
+    filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.optionsBtn-selected {
+    opacity:0.85 !important;
+    filter:alpha(opacity=85) !important; /* For IE8 and earlier */
 }
