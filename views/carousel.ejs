@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MapCache: No GPS, No Problem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container"></div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+var dojoConfig = {
+				dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, '') + '/blank.html',
+				packages: [{
+					name: 'js',
+					location:  '/js'
+				}]
+			};
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"
+               data-dojo-config="async: true"></script>
+<script type="text/javascript" src="js/carousel.js"></script>
+
+</body>
+</html>
