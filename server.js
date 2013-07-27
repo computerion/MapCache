@@ -6,7 +6,12 @@ app.listen(port);
 console.log('Listening on port 3000');
 
 app.use(express.static(__dirname + '/static'));
+app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
 	res.sendfile('index.html');
+});
+
+app.post('/showDirections', function(req, res) {
+
 });
