@@ -14,6 +14,9 @@
 </head>
 <body>
     <div id="container"></div>
+        <form id="passthru" method="POST" action="/carousel">
+            <input id="stuff" type="hidden" name="items" value="<%= items %>">
+        </form>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script>

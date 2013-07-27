@@ -2,13 +2,25 @@
 	<div class="${baseClass}Slider">
     	<div data-dojo-attach-point="containerNode" class="${baseClass}ImageContainer"></div>
     </div>
-    <div data-dojo-attach-point="textNode" class="${baseClass}TextContainer">
-    	<h3 data-dojo-attach-point="titleNode"></h3>
-        <p data-dojo-attach-point="descriptionNode" class="${baseClass}Description"></p>
-        <div class="${baseClass}ScrollContainer">
-        	<p data-dojo-attach-point="tabNode" class="${baseClass}TabContainer"></p>
-            <div data-dojo-attach-point="scrollNode"></div>
+    <div class="${baseClass}TextContainer">
+    <div data-dojo-attach-point="textNode">
+        <div style="display: table-cell; width:0px; padding-left:10px;padding-top: 6px; padding-right: 10px" data-dojo-attach-point="leftNode">
+            <img src="img/right.png" style="-moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2)" >
         </div>
-        <br style="clear:both" />
+        <div style="display: table-cell; width: 60px; text-align: center; vertical-align: top">
+            <img src="" data-dojo-attach-point="imageNode" style="width: 40px; height: 40px; padding:8px">
+            <p data-dojo-attach-point="titleNode"></p>
+        </div>
+        <div style="display: table-cell;width: 300px; padding-left:10px;padding-top:7px; vertical-align: top">
+            <p data-dojo-attach-point="descriptionNode"></p>
+            <p data-dojo-attach-point="timeNode"></p>
+        </div>
+        <div style="display: table-cell; width:30px;padding-top: 6px" data-dojo-attach-point="rightNode">
+            <img src="img/right.png">
+        </div>
     </div>
+        </div>
 </div>
