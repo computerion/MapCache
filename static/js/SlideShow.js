@@ -38,6 +38,9 @@ define([
                     + "&sensor=false";
                 return url;
             }
+            function getDegree(start,end){
+                return google.maps.geometry.spherical.computeHeading(start,end);
+            }
 			this.nodeList = new Array();
 			this.positionList = new Array();
 			
@@ -69,7 +72,7 @@ define([
                     }
 					slideshow.imageDataArray.push({
                         imgUrl: appendImage({
-                            sizeX:slideshow.width, sizeY:slideshow.height,x:main.end_location.jb, y:main.end_location.kb
+                            sizeX:slideshow.width, sizeY:slideshow.height,x:main.end_location.jb, y:main.end_location.kb, heading: getDegree(main.start_location, main.end_location)
                         }),
                         imgTitle: item.distance.text,
                         imgDescription: item.instructions,
@@ -77,6 +80,7 @@ define([
                         duration: item.duration.value,
                         timeText: item.duration.text
                     })
+                 //   console.log(getDegree(main.start_location, main.end_location) + " " + 360*getDegree(main.start_location, main.end_location)/(2*Math.PI));
                     if (i==0){
                         slideshow.titleNode.innerHTML = item.distance.text;
                         slideshow.descriptionNode.innerHTML = item.instructions;
