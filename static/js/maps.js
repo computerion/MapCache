@@ -7,6 +7,7 @@ $(document).ready(function() {
             travelMode: google.maps.DirectionsTravelMode[type.toUpperCase()]
         };
         directionsService.route(request, function(response, status) {
+            console.log(response);
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 console.log(response);

@@ -19,7 +19,8 @@ app.post('/showDirections', function(req, res) {
 });
 
 app.post('/directionsList', function(req, res) {
-	res.render('list.ejs');
+    console.log(req.body);
+	res.render('list.ejs', req.body);
 });
 
 var port = process.env.PORT || 3000;
