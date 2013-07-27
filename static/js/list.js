@@ -11,6 +11,7 @@ require(["dojo/dom", "js/dirWidget", "dojo/on"],function(dom, dirWidget, on) {
         on(widget.domNode, "click", function(evt){
             var url = $('<form>', {
                 "method": "post",
+                "target": "_blank",
                 "id": "panoramaPass",
                 "html": "<input type='hidden' name='item' value='" + JSON.stringify(item.end_location) + "' />",
                 "action": "/panorama"
