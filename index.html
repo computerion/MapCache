@@ -12,6 +12,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
     <style>
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -28,6 +29,7 @@
          * To change this template use File | Settings | File Templates.
          */
         google.maps.visualRefresh = true;
+        var drivingOption =  google.maps.DirectionsTravelMode.DRIVING;
         var directionsDisplay;
         var directionsService = new google.maps.DirectionsService();
         var map;
@@ -43,21 +45,29 @@
             directionsDisplay.setMap(map);
 
             $("#gobtn").click(function() {
-                var input1 = $("#dir1").val();
-                var input2 = $("#dir2").val();
-                calcRoute(input1, input2);
+                //var input1 = $("#dir1").val();
+                //var input2 = $("#dir2").val();
+                //Testing purposes:
+                var input1 = "1051 W. McKinley Sunnyvale"
+                var input2 = "2029 Stierlin Court Mountain View"
+                console.log(drivingOption);
+                calcRoute(input1, input2, drivingOption);
             });
+            $(".optionsBtn").click(function(){
+                drivingOption = google.maps.DirectionsTravelMode[$(this).text().toUpperCase()];
+            })
         }
 
-        function calcRoute(start, end) {
+        function calcRoute(start, end, type) {
             var request = {
                 origin:start,
                 destination:end,
-                travelMode: google.maps.DirectionsTravelMode.DRIVING
+                travelMode: type
             };
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
+                    console.log(response);
                 }
             });
         }
@@ -99,7 +109,13 @@
                     <label for="dir1" style="margin-top: 20px">Location B</label>
                     <input id="dir2">
                 </form>
-                <div class="btn-group">
+                <div class="btn-group" data-toggle="buttons-radio" style="margin-bottom: 12px">
+                    <button type="button" class="btn btn-primary optionsBtn">Driving</button>
+                    <button type="button" class="btn btn-primary optionsBtn">Transit</button>
+                    <button type="button" class="btn btn-primary optionsBtn">Bicycling</button>
+                    <button type="button" class="btn btn-primary optionsBtn">Walking</button>
+                </div>
+                <div class="buttons-radio" style="margin: 0">
                     <button class="btn" id="gobtn" style="width:213px">Go</button>
                 </div>
             </div>
