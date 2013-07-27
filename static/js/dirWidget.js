@@ -23,8 +23,6 @@ define([
 
             distance: null,
 
-            onClick: null,
-
             maneuver: null,
 
             postCreate: function(){
@@ -58,11 +56,6 @@ define([
                 main.streetNode.src = appendImage({
                     sizeX:80, sizeY:80,x:main.end_location.jb, y:main.end_location.kb
                 })
-                if (main.onClick!=null){
-                    dojo.on(main.domNode, function(evt){
-                        main.onClick();
-                    });
-                }
 
             }
 

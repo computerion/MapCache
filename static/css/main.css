@@ -107,3 +107,12 @@ html, body {
 .depart:hover{
     color:white;
 }
+
+.myStuff{
+    width: 100%; border-top: 1px solid white!important;
+}
+
+.myStuff:hover{
+    border-top: 1px solid #e6e7e8;
+    color: #e6e7e8
+}
