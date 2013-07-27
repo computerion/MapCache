@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     $("#dir1").val($("#origin").val());
     $("#dir2").val($("#destination").val());
-
+    var dirType = $("mode").val();
     $(".optionsBtn").click(function(){
         $("#mode").val($(this).attr('id').toUpperCase());
         $(".optionsBtn").removeClass("optionsBtn-selected");
@@ -52,4 +52,9 @@ $(document).ready(function() {
     console.log($("#mode").val());
 
     $("#"+$("#mode").val()).addClass("optionsBtn-selected");
+    $("#refresh").click(
+        function(){
+            calcRoute($("#dir1").val(), $("#dir2").val(), $("#mode").val());
+        }
+    )
 });

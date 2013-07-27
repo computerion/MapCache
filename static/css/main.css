@@ -76,3 +76,26 @@ html, body {
     border: 0 !important;
     color: #e6e7e8 !important;
 }
+
+.second_buttons {
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.second_buttons .fuck {
+    text-decoration:underline; margin-bottom: 5px;
+}
+
+.second_buttons .fuck:hover{
+    color: #ffffff;
+}
+.second_buttons .thing {
+    width: 100%;
+    padding: 3px 0 3px 0;
+    border: 1px solid #e6e7e8;
+    color: #e6e7e8;
+}
+.second_buttons .thing:hover {
+    border: 1px solid #939393;
+    color: #939393;
+}
