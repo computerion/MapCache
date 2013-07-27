@@ -22,9 +22,14 @@ app.post('/directionsList', function(req, res) {
 	res.render('list.ejs', req.body);
 });
 
-app.post('/carousel'), function(req, res) {
+app.post('/carousel', function(req, res) {
 	res.render('carousel.ejs', req.body);
-}
+});
+
+app.post('/panorama', function(req, res) {
+	console.log(req.body);
+	res.render('panorama.ejs', req.body);
+});
 
 var port = process.env.PORT || 3000;
 app.listen(port);

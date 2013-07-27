@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MapCache: No GPS, No Problem</title>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+    function initialize() {
+      var coords = JSON.parse($("#coords").val());
+      console.log(coords);
+      var loc = new google.maps.LatLng(coords.jb,coords.kb);
+      var map = new google.maps.Map(
+          document.getElementById('map-canvas'));
+      var panoramaOptions = {
+        position: loc
+      };
+      var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'),panoramaOptions);
+      map.setStreetView(panorama);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <input type="hidden" id="coords" value="<%= item %>">
+    <div id="map-canvas"></div>
+    <div id="pano" style="float: left; width: 400px; height: 300px;"></div>
+  </body>
+</html>
+
