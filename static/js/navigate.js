@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    $("#dir1").val("2029 Stierlin Court, Mountain View, CA");
-    $("#dir2").val("701 First Ave, Sunnyvale, CA");
 
     var dirType = "driving";
     $("#gobtn").click(function() {

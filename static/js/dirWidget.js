@@ -26,6 +26,16 @@ define([
             maneuver: null,
 
             postCreate: function(){
+                function getDegree(path,start,end){
+                    var ans = 0;
+                    if(path.length>=0){
+                        ans = google.maps.geometry.spherical.computeHeading(path[path.length-2],path[path.length-1]);
+                    }
+                    else{
+                        ans =   google.maps.geometry.spherical.computeHeading(start,end);
+                    }
+                    return ans;
+                }
                 function appendImage(parameters) {
                     var url = "http://maps.googleapis.com/maps/api/streetview?size=" + parameters.sizeX + "x" + parameters.sizeY +
                         "&location=" + parameters.x + ",%20" + parameters.y + ("heading" in parameters ? "&heading=" + parameters.heading : "")
@@ -54,7 +64,7 @@ define([
                 main.dirNode.innerHTML = main.instructions;
                 main.timeNode.innerHTML = main.duration.text;
                 main.streetNode.src = appendImage({
-                    sizeX:80, sizeY:80,x:main.end_location.jb, y:main.end_location.kb
+                    sizeX:80, sizeY:80,x:main.end_location.jb, y:main.end_location.kb, heading: getDegree(main.path, main.start_location, main.end_location)
                 })
 
             }
