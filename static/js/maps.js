@@ -11,7 +11,7 @@ $(document).ready(function() {
                 directionsDisplay.setDirections(response);
                 var route = response.routes[0];
                 var leg = route.legs[0];
-                path = leg[0].steps;
+                path = leg.steps;
             }
             else {
                 console.log('Failed to get directions for this route');
