@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     $(".optionsBtn").click(function(){
-        $("#mode").val($(this).val().toUpperCase());
+        $("#mode").val($(this).id.toUpperCase());
         $(".optionsBtn").removeClass("optionsBtn-selected");
         $(this).addClass("optionsBtn-selected");
         dirType = $(this).id;

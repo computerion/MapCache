@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 app.post('/showDirections', function(req, res) {
 	var start = req.body.start;
 	var end = req.body.end;
-	res.sendfile('maps.ejs', {"start": start, "end": end});
+	res.render('maps.ejs', {"start": start, "end": end});
 });
 
 var port = process.env.PORT || 3000;
