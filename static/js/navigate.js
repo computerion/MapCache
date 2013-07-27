@@ -4,6 +4,8 @@ $(document).ready(function() {
 
     var dirType = "driving";
     $("#gobtn").click(function() {
+        $("#mode").val(dirType);
+        console.log($("#mode").val());
         $("#locForm").submit();
     });
 

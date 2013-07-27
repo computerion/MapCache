@@ -3,7 +3,7 @@ $(document).ready(function() {
         var request = {
             origin:start,
             destination:end,
-            travelMode: type
+            travelMode: google.maps.DirectionsTravelMode[type.toUpperCase()]
         };
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
@@ -50,4 +50,14 @@ $(document).ready(function() {
 
     $("#dir1").val($("#origin").val());
     $("#dir2").val($("#destination").val());
+
+    $(".optionsBtn").click(function(){
+        $("#mode").val($(this).attr('id').toUpperCase());
+        $(".optionsBtn").removeClass("optionsBtn-selected");
+        $(this).addClass("optionsBtn-selected");
+        dirType = $(this).attr('id');
+    })
+    console.log($("#mode").val());
+
+    $("#"+$("#mode").val()).addClass("optionsBtn-selected");
 });
