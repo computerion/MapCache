@@ -10,3 +10,9 @@ require(["dojo/dom"],function(dom) {
     var steps = "<%= steps %>";
     console.log(steps);
 });
+
+$(document).ready(function(){
+	$("#depart-button").click(function() {
+		$("").submit();
+	});
+});
