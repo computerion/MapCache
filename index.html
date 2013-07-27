@@ -14,37 +14,33 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
-    <style>
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type="text/javascript" src="js/navigate.js"></script>
 </head>
 <body>
 
-<div class="container">
-    <h1>MapCache</h1>
-    <p>No GPS. No Problem</p>
-    <div style="margin-top:30px; margin-bottom: 30px">
-        <form id="locForm" action="/showDirections">
-            <label for="dir1">Location A</label>
-            <input id="dir1" name="startLoc" class="dir">
-            <label for="dir2" style="margin-top: 20px">Location B</label>
-            <input id="dir2" name="endLoc" class="dir">
-        </form>
-        <div class="btn-group" data-toggle="buttons-radio" style="margin-bottom: 12px">
-            <button type="button" class="btn btn-primary optionsBtn">Driving</button>
-            <button type="button" class="btn btn-primary optionsBtn">Transit</button>
-            <button type="button" class="btn btn-primary optionsBtn">Bicycling</button>
-            <button type="button" class="btn btn-primary optionsBtn">Walking</button>
+<div class="text-center">
+    <div class="container" style="width:213px; text-align: left">
+            <h1>MapCache</h1>
+            <div style="margin-top:14px; margin-bottom: 30px">
+                <form id="locForm" action="/showDirections" style="margin-bottom: 10px">
+                    <label for="dir1">Starting Address</label>
+                    <input id="dir1" name="startLoc" class="dir">
+                    <label for="dir2" style="margin-top: 30px">Ending Address</label>
+                    <input id="dir2" name="endLoc" class="dir">
+                </form>
+                <div style="width: 213px; text-align:center;">
+                <div class="icon-group" style="margin-bottom: 12px; width: 213px;">
+                    <div class="optionsBtn"><img src="/img/car_icon.png" style="width: 53px; height: 26px"></div>
+                    <div class="optionsBtn"><img src="/img/bicycle_icon.png"></div>
+                    <div class="optionsBtn"><img src="/img/walking_icon.png"></div>
+                </div>
+                <div class="btn-group" style="margin:0">
+                    <button class="btn" id="gobtn">Route</button>
+                </div>
+                </div>
+            </div>
         </div>
-        <div class="btn-group" style="margin:0">
-            <button class="btn btn-primary" id="gobtn" style="width:213px">Go</button>
-        </div>
-    </div>
 </div>
 
 </body>
