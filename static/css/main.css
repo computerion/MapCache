@@ -41,3 +41,12 @@ html, body {
 
 #icon-group .optionsBtn {
 }
+
+.goBtn {
+    margin-top: 15px;
+    border: 1px solid #e6e7e8;
+    color: #e6e7e8;
+    font-size: 17px;
+    background-color: transparent;
+    padding: 4px 15px 4px 15px;
+}
