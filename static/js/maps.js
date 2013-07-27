@@ -1,6 +1,6 @@
 $(document).ready(function() {
+    var path = null;
     function calcRoute(start, end, type) {
-        console.log(type);
         var request = {
             origin:start,
             destination:end,
@@ -9,7 +9,9 @@ $(document).ready(function() {
         directionsService.route(request, function(response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
-                var metadata = response.Mb;
+                var route = response.routes[0];
+                var leg = route.legs[0];
+                path = leg[0].steps;
             }
             else {
                 console.log('Failed to get directions for this route');
@@ -52,9 +54,14 @@ $(document).ready(function() {
     console.log($("#mode").val());
 
     $("#"+$("#mode").val()).addClass("optionsBtn-selected");
-    $("#refresh").click(
-        function(){
+    $("#refresh").click(function(){
             calcRoute($("#dir1").val(), $("#dir2").val(), $("#mode").val());
-        }
-    )
+    });
+
+    $("#proceed").click(function(){
+        // Spin!
+        while (path === null) {}
+        $.post('/directionsList', {'steps': path});
+    });
+
 });

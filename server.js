@@ -15,8 +15,11 @@ app.post('/showDirections', function(req, res) {
 	var end = req.body.end;
 	var mode = req.body.mode;
 	var params = {"start": start, "end": end, "mode": mode}
-	console.log(params);
 	res.render('maps.ejs', params);
+});
+
+app.post('/directionsList', function(req, res) {
+	res.render('list.ejs', req.body);
 });
 
 var port = process.env.PORT || 3000;
