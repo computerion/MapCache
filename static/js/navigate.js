@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    $("#dir1").val("53 Wild Rose Drive, Andover, MA");
+    $("#dir2").val("14 Bridle Path Road, Andover, MA");
     google.maps.visualRefresh = true;
     var directionsDisplay;
     var directionsService = new google.maps.DirectionsService();
@@ -38,8 +40,7 @@ $(document).ready(function() {
                 var metadata = response.Mb;
                 var routes = response.routes;
                 var leg = routes[0].legs;
-                console.log(leg);
-                var steps = leg.steps;
+                var steps = leg[0].steps;
             }
             else {
                 console.log('Failed to get directions for this route');
