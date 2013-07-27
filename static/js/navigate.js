@@ -7,6 +7,9 @@ $(document).ready(function() {
         $("#locForm").submit();
     });
 
+    $('#dir1').val('Mountain View, CA');
+    $('#dir2').val('Sunnyvale, CA');
+
     $(".optionsBtn").click(function(){
         $("#mode").val($(this).attr('id').toUpperCase());
         $(".optionsBtn").removeClass("optionsBtn-selected");
