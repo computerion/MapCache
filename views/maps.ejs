@@ -18,21 +18,21 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
-<div class="text-center">
-    <div class="container" style="width: 213px; text-align: left">
-        <div id="map-canvas"></div>
+    <div class="text-center">
+        <div class="container" style="width: 213px; text-align: left">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="container">
+            <input type="hidden" id="origin" value="<%= start %>">
+            <input type="hidden" id="destination" value="<%= end %>">
+            <input type="hidden" id="mode" value="<%= mode %>">
+        </div> 
     </div>
-    <div class="container">
-        <input type="hidden" id="origin" value="<%= start %>">
-        <input type="hidden" id="destination" value="<%= end %>">
-        <input type="hidden" id="mode" value="<%= mode %>">
-    </div> 
-</div>
-<!-- Scripts at end -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
-<script type="text/javascript" src="js/maps.js"></script>
+    <!-- Scripts at end -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
+    <script type="text/javascript" src="js/maps.js"></script>
 </body>
 </html>

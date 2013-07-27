@@ -9,15 +9,8 @@ $(document).ready(function() {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 var metadata = response.Mb;
-                console.log(metadata);
-                var routes = response.routes;
-                var leg = routes[0].legs;
-                var steps = leg[0].steps;
-                var startLoc = steps[0].start_location;
-                var endLoc = steps[0].end_location;
-                var params = {"sizeX": 200, "sizeY": 200, "x": startLoc.jb, "y": startLoc.kb, "heading": 0}
-                console.log("Appending image");
-                appendImage(params, $("#my-container"));
+                $().val(metadata.origin);
+                $().val(metadata.destination);
             }
             else {
                 console.log('Failed to get directions for this route');
