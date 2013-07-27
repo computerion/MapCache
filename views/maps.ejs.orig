@@ -13,6 +13,24 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
+<<<<<<< HEAD
+    <div class="text-center">
+        <div class="container" style="width: 213px; text-align: left">
+            <div id="map-canvas"></div>
+        </div>
+        <div class="container">
+            <input type="hidden" id="origin" value="<%= start %>">
+            <input type="hidden" id="destination" value="<%= end %>">
+            <input type="hidden" id="mode" value="<%= mode %>">
+        </div> 
+    </div>
+    <!-- Scripts at end -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
+    <script type="text/javascript" src="js/maps.js"></script>
+=======
 <div class="text-center">
     <div style="width: 100%; height:300px">
         <div id="map-canvas"></div>
@@ -29,6 +47,7 @@
             <div class="optionsBtn" id="bicycling"><img src="/img/bicycle_icon.png" style="width: 26.5px; height: 13px"></div>
             <div class="optionsBtn" id="walking"><img  src="/img/walking_icon.png" style="width:11.5px; height: 16px"></div>
         </div>
+
     </div>
     <div class="container">
         <input type="hidden" id="origin" value="<%= start %>">
@@ -42,5 +61,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
 <script type="text/javascript" src="js/maps.js"></script>
+>>>>>>> 2af038d678095e7fbb0dd5b8abd675f7cbc8298f
 </body>
 </html>

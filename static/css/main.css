@@ -1,8 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
-    padding-top: 10px !important;
+    padding: 0 !important;
     background-color: #262626;
     color: #939393;
 }
@@ -69,4 +68,11 @@ html, body {
 .optionsBtn-selected {
     opacity:0.85 !important;
     filter:alpha(opacity=85) !important; /* For IE8 and earlier */
+}
+
+.scndPageDir {
+    background-color:#262626 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    color: #e6e7e8 !important;
 }

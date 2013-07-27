@@ -40,4 +40,7 @@ $(document).ready(function() {
     map = new google.maps.Map(document.getElementById('map-canvas', mapOptions));
     directionsDisplay.setMap(map);
     calcRoute($("#origin").val(), $("#destination").val(), $("#mode").val());
+
+    $("#dir1").val($("#origin").val());
+    $("#dir2").val($("#destination").val());
 });
