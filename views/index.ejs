@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +10,7 @@
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <script type="text/javascript" src="js/navigate.js"></script>
 </head>
 <body>
 
@@ -23,7 +18,7 @@
     <div class="container" style="width:213px; text-align: left">
             <h1>MapCache</h1>
             <div style="margin-top:14px; margin-bottom: 30px">
-                <form id="locForm" action="/showDirections" style="margin-bottom: 10px">
+                <form id="locForm" method="post" action="/showDirections" style="margin-bottom: 10px">
                     <label for="dir1">Starting Address</label>
                     <input id="dir1" name="startLoc" class="dir">
                     <label for="dir2" style="margin-top: 30px">Ending Address</label>
@@ -42,6 +37,10 @@
             </div>
         </div>
 </div>
-
+<!-- Load scripts right before end of body -->    
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
+<script type="text/javascript" src="js/navigate.js"></script>
 </body>
 </html>
