@@ -19,53 +19,9 @@
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script>
-        /**
-         * Created with IntelliJ IDEA.
-         * User: dhu
-         * Date: 7/26/13
-         * Time: 5:47 PM
-         * To change this template use File | Settings | File Templates.
-         */
-        google.maps.visualRefresh = true;
-        var directionsDisplay;
-        var directionsService = new google.maps.DirectionsService();
-        var map;
-        function initialize() {
-            var mapOptions = {
-                zoom: 8,
-                center: new google.maps.LatLng(-34.397, 150.644),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-            directionsDisplay = new google.maps.DirectionsRenderer();
-
-            directionsDisplay.setMap(map);
-
-            $("#gobtn").click(function() {
-                var input1 = $("#dir1").val();
-                var input2 = $("#dir2").val();
-                calcRoute(input1, input2);
-            });
-        }
-
-        function calcRoute(start, end) {
-            var request = {
-                origin:start,
-                destination:end,
-                travelMode: google.maps.DirectionsTravelMode.DRIVING
-            };
-            directionsService.route(request, function(response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                    directionsDisplay.setDirections(response);
-                }
-            });
-        }
-
-
-    </script>
+    <script type="text/javascript" src="js/navigate.js"></script>
 </head>
-<body onload="initialize()">
+<body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
@@ -95,12 +51,12 @@
             <div style="margin-top:30px; margin-bottom: 30px">
                 <form>
                     <label for="dir1">Location A</label>
-                    <input id="dir1">
+                    <input id="dir1" class="dir">
                     <label for="dir1" style="margin-top: 20px">Location B</label>
-                    <input id="dir2">
+                    <input id="dir2" class="dir">
                 </form>
                 <div class="btn-group">
-                    <button class="btn" id="gobtn" style="width:213px">Go</button>
+                    <button class="btn btn-primary" id="gobtn" style="width:213px">Go</button>
                 </div>
             </div>
         </div>
