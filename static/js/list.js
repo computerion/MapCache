@@ -11,6 +11,6 @@ require(["dojo/dom", "js/dirWidget"],function(dom, dirWidget) {
 
 $(document).ready(function(){
 	$("#depart-button").click(function() {
-		$("").submit();
+		$("#passthru").submit();
 	});
 });

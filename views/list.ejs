@@ -17,7 +17,9 @@
         <div id="depart-button" class="depart">Depart</div>
         <div id="container"></div>
     </div>
-    <input id="stuff" type="hidden" value="<%= items %>">
+    <form id="passthru" method="POST" action="/carousel">
+        <input id="stuff" type="hidden" value="<%= items %>">
+    </form>
 <!-- Scripts at end -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
