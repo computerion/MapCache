@@ -5,12 +5,11 @@ $(document).ready(function() {
     $("#gobtn").click(function() {
         var input1 = $("#dir1").val();
         var input2 = $("#dir2").val();
-        $("locForm").submit();
+        $("#locForm").submit();
     });
 
     $(".optionsBtn").click(function(){
-        dirType = google.maps.DirectionsTravelMode[$(this).text().toUpperCase()];
-        console.log(dirType);
+        $("#mode").val($(this).val.toUpperCase());
     })
 
     $(".dir").keypress(function(e) {

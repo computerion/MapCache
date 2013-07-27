@@ -2,6 +2,9 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    padding-top: 10px !important;
+    background-color: #262626;
+    color: #939393;
 }
 
 #map-canvas, #map_canvas {
@@ -32,4 +35,9 @@ html, body {
 .optionsBtn {
     font-size: 10px !important;
     padding: 4px 9px 4px 9px;
+    width: 50px;
+    display:inline-block;
+}
+
+#icon-group .optionsBtn {
 }
