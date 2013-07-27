@@ -13,6 +13,7 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"></script>
     <style>
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -56,6 +57,7 @@
             $(".optionsBtn").click(function(){
                 drivingOption = google.maps.DirectionsTravelMode[$(this).text().toUpperCase()];
             })
+
         }
 
         function calcRoute(start, end, type) {
@@ -67,10 +69,15 @@
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
-                    console.log(response);
                 }
             });
         }
+            function appendImage(parameters, place){
+                var url = "http://maps.googleapis.com/maps/api/streetview?size=" + parameters.sizeX + "x" + parameters.sizeY +
+                        "&location=" + parameters.x + ",%"+parameters.y+"&heading="+parameters.heading+"&sensor=false";
+                var img = $("#my-container").append('<img id="mapImage">');
+                $('#mapImage').attr('src', url);
+            }
 
 
     </script>
@@ -116,16 +123,19 @@
                     <button type="button" class="btn btn-primary optionsBtn">Walking</button>
                 </div>
                 <div class="buttons-radio" style="margin: 0">
-                    <button class="btn" id="gobtn" style="width:213px">Go</button>
+                    <button class="btn" id="gobtn" style="width:213px">Route</button>
                 </div>
             </div>
         </div>
-        <div class="span8">
+        <div class="span8" style="margin-top:20px">
             <div style="width: 500px; height: 300px;">
                 <div id="map-canvas"></div>
             </div>
         </div>
     </div>
+</div>
+<div class="container" id="my-container">
+
 </div>
 
 </body>
