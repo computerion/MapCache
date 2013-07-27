@@ -8,11 +8,10 @@ $(document).ready(function() {
     });
 
     $(".optionsBtn").click(function(){
-        $("#mode").val($(this).id.toUpperCase());
+        $("#mode").val($(this).attr('id').toUpperCase());
         $(".optionsBtn").removeClass("optionsBtn-selected");
         $(this).addClass("optionsBtn-selected");
-        dirType = $(this).id;
-        console.log($(this));
+        dirType = $(this).attr('id');
         console.log(dirType);
     })
 
