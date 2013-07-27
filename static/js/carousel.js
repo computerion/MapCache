@@ -1,20 +1,11 @@
-require(["dojo/dom", "js/dirWidget", "dojo/on"],function(dom, dirWidget, on) {
-    console.log("hi there!");
+require(["dojo/dom", "js/SlideShow"],function(dom, SlideShow) {
 
     var steps = JSON.parse($("#stuff").val());
     console.log(steps);
-    dojo.forEach(steps, function(item, i){
-        var widget = new dirWidget(item);
-
-        on(widget.domNode, "click", function(evt){
-            console.log("YOLO");
-        })
-        widget.placeAt(dom.byId("container"));
-    })
-});
-
-$(document).ready(function(){
-    $("#depart-button").click(function() {
-        $("#passthru").submit();
-    });
+    var slideShow = new SlideShow(
+        {
+            width: 480, height:320,
+            resp: steps
+        });
+    slideShow.placeAt(dom.byId("container"));
 });
