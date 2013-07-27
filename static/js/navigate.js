@@ -4,7 +4,6 @@ $(document).ready(function() {
 
     var dirType = "driving";
     $("#gobtn").click(function() {
-        console.log($("#mode").val());
         $("#locForm").submit();
     });
 
@@ -13,7 +12,6 @@ $(document).ready(function() {
         $(".optionsBtn").removeClass("optionsBtn-selected");
         $(this).addClass("optionsBtn-selected");
         dirType = $(this).attr('id');
-        console.log(dirType);
     })
 
     $("#driving").addClass("optionsBtn-selected");
