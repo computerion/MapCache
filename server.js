@@ -19,12 +19,11 @@ app.post('/showDirections', function(req, res) {
 });
 
 app.post('/directionsList', function(req, res) {
-    console.log(req.body);
 	res.render('list.ejs', req.body);
 });
 
 app.post('/carousel'), function(req, res) {
-	
+	res.render('carousel.ejs', req.body);
 }
 
 var port = process.env.PORT || 3000;
