@@ -1,5 +1,6 @@
 $(document).ready(function() {
     function calcRoute(start, end, type) {
+        console.log(type);
         var request = {
             origin:start,
             destination:end,
@@ -9,8 +10,6 @@ $(document).ready(function() {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 var metadata = response.Mb;
-                $().val(metadata.origin);
-                $().val(metadata.destination);
             }
             else {
                 console.log('Failed to get directions for this route');
