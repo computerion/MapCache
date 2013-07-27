@@ -13,13 +13,26 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body>
-    <div style="width: 100%; height:300px">
-        <div id="depart-button">Depart</div>
+    <div style="width: 100%; height:300px; padding: 7px">
+        <div id="depart-button" class="depart">Depart</div>
         <div id="container"></div>
     </div>
-    <!-- Scripts at end -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/list.js"></script>
+    <input id="stuff" type="hidden" value="<%= items %>">
+<!-- Scripts at end -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+var dojoConfig = {
+				dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, '') + '/blank.html',
+				packages: [{
+					name: 'js',
+					location:  '/js'
+				}]
+			};
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.5/dojo/dojo.js"
+               data-dojo-config="async: true"></script>
+<script type="text/javascript" src="js/list.js"></script>
+
 </body>
 </html>

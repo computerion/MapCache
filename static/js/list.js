@@ -1,14 +1,12 @@
-require(["dojo/dom"],function(dom) {
-    function appendImage(parameters) {
-        var url = "http://maps.googleapis.com/maps/api/streetview?size=" + parameters.sizeX + "x" + parameters.sizeY +
-            "&location=" + parameters.x + ",%20" + parameters.y + ("heading" in parameters ? "&heading=" + parameters.heading : "")
-            + "&sensor=false";
-        console.log(url);
-        return url;
-    }
-    console.log("i made it here");
-    var steps = "<%= steps %>";
+require(["dojo/dom", "js/dirWidget"],function(dom, dirWidget) {
+    console.log("hi there!");
+
+    var steps = JSON.parse($("#stuff").val());
     console.log(steps);
+    dojo.forEach(steps, function(item, i){
+        var widget = new dirWidget(item);
+        widget.placeAt(dom.byId("container"));
+    })
 });
 
 $(document).ready(function(){
