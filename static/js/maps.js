@@ -7,10 +7,8 @@ $(document).ready(function() {
             travelMode: google.maps.DirectionsTravelMode[type.toUpperCase()]
         };
         directionsService.route(request, function(response, status) {
-            console.log(response);
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
-                console.log(response);
                 var route = response.routes[0];
                 var leg = route.legs[0];
                 path = leg.steps;
@@ -22,7 +20,10 @@ $(document).ready(function() {
     }
 
     google.maps.visualRefresh = true;
-    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var rendererOptions = {
+        draggable: true
+    }
+    var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
     var directionsService = new google.maps.DirectionsService();
     var map;
 
@@ -56,6 +57,12 @@ $(document).ready(function() {
         while (path === null) {}
         $("#items").val(JSON.stringify(path));
         $("#locForm").submit();
+    });
+
+    google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
+        path = directionsDisplay.directions.routes[0].legs[0];
+        $("#dir1").val(path.start_address);
+        $("#dir2").val(path.end_address);
     });
 
 });
