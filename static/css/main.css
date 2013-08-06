@@ -204,3 +204,9 @@ html, body {
     height: 2px;
     background-color: #1e839d;
 }
+
+.useGeolcation
+{
+    text-align: right;
+    font-size: 12px;
+}

@@ -21,6 +21,7 @@
                 <form id="locForm" method="post" action="/showDirections" style="margin-bottom: 10px">
                     <label for="dir1">Starting Address</label>
                     <input type="text" id="dir1" name="start" class="dir">
+                    <div class="useGeolcation">use your location</div>
                     <label for="dir2" style="margin-top: 35px">Ending Address</label>
                     <input type="text" id="dir2" name="end" class="dir">
                     <input type="hidden" id="mode" name="mode" class="dir" value="DRIVING">
@@ -37,6 +38,7 @@
         </div>
 </div>
 <!-- Load scripts right before end of body -->    
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/navigate.js"></script>

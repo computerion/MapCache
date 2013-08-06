@@ -65,4 +65,25 @@ $(document).ready(function() {
         $("#dir2").val(path.end_address);
     });
 
+    function useCurrentLocation(inp){
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = new google.maps.LatLng(position.coords.latitude,
+                                           position.coords.longitude);
+            var infowindow = new google.maps.InfoWindow({
+                map: map,
+                position: pos,
+                content: 'Location found using HTML5.'
+            });
+
+            map.setCenter(pos);
+        }, function() {
+            console.log("Error navigator failed");
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        console.log("Error no navigator");
+      }
+    }
+
 });
